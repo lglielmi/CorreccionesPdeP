@@ -11,7 +11,7 @@ El badge a CircleCI no fue generado correctamente. Actualmente se ve así:
 Esto se debe a que no creaste el Token.
 El procedimiento para generarlo es el siguiente:
 
-![](/videos/circleCIstatusBadge.gif)
+![](../videos/circleCIstatusBadge.gif)
 
 En cuanto a la función, 
 ``` Haskell
