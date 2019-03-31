@@ -26,14 +26,10 @@ está perfecta.
 
 Mismo problema con el Badge de CircleCI. Ver correción de Kata 00.
 Pero acá hay un problema más: los test fallán al ejecutarlo. Poder verificarlo en [el log de CircleCI](https://circleci.com/gh/pdep-utn/kata-1-guardas-elcri93/2).
-Por un lado, esto nos desprende dos posibilidades:
-- No ejecutaste los Tests o
-- Los ejecutaste, fallaron, pero lo dejaste así igual.
-Ejecutar los Test automaticos es algo mucho muy importante porque por un lado te sacan de encima una tarea muy reiterativa y además, ante modificaciones/correcciones/ampliación en la funcionalidad te aseguras no estar rompiendo nada.
 
 La parte buena es que no se debió a como codeaste la función, sino por un problema en el archivo de test por nuestra parte.
 Varios de tus compañeros nos informaron del error al grupo de la clase, y les indicamos como corregirlo.
-Sabemos que fue una semana complicada donde se enviaron muchisimos mails, pero es importante que intentes verlos porqu seguramente habrá información que te va a ser de utilidad.
+Sabemos que fue una semana complicada donde se enviaron muchisimos mails, pero es importante que intentes verlos porque seguramente habrá información que te va a ser de utilidad.
 
 En cuanto a la solución, hay un par de aclaraciones a realizar:
 Estrictamente en cuanto a lo que la solución compete, cumple con su objetivo.
@@ -116,7 +112,7 @@ calcuLoco x y | x > y = x * segundoNuymero
 ```
 
 Y por ultimo una pequeña aclaración más, que entendemos que lo tuviste en cuenta pero no está de más mencionarlo:
-Utilizar como variables X e Y aplican unicamente para estos casos donde estamos representando funciones y podemos entender que estamos en un ambito matemático, pero insistimos: solo es valido en este ambito.
+Llamar a las variables X e Y aplican correctamente para este estilo de problemas matemáticos, dado que estamos representando funciones. Pero es importante que esto este claro y cuando pasemos a otro estilos de problemas, continuemos buscando nombres que nos expresen lo que está modelando y representando.
 
 ## CASTRO, EMILIANO MATIAS
 K2152 emilianocast98@gmail.com	ecastro98
@@ -154,4 +150,4 @@ Sin embargo, te queremos mencionar la existencia de la función Even: ya proporc
 Dentro de la siguiente [Guía](https://docs.google.com/document/d/1oJ-tyQJoBtJh0kFcsV9wSUpgpopjGtoyhJdPUdjFIJQ/edit) podrás encontrar más funciones que te van a facilitar las resoluciones
 
 Y por ultimo una pequeña aclaración más, que entendemos que lo tuviste en cuenta pero no está de más mencionarlo:
-Utilizar como variables X e Y aplican unicamente para estos casos donde estamos representando funciones y podemos entender que estamos en un ambito matemático, pero insistimos: solo es valido en este ambito.
+Llamar a las variables X e Y aplican correctamente para este estilo de problemas matemáticos, dado que estamos representando funciones. Pero es importante que esto este claro y cuando pasemos a otro estilos de problemas, continuemos buscando nombres que nos expresen lo que está modelando y representando.
