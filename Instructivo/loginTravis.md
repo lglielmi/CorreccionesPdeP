@@ -5,7 +5,7 @@ Para acceder a ellos, hay que seguir los siguientes pasos:
 
 ### 1) Agregar mail de la UTN a Github
 Tenes que entrar a Settings y luego a Emails. Completas con tu usuario de la UTN y le das a Add.
-![](Images/agregarMail.png)
+![](../Images/agregarMail.png)
 Si no conoces tu mail de la utn es <usuarioSingUp>@est.frba.utn.edu.ar
 
 ### 2) Validar mail
@@ -56,8 +56,9 @@ Entremos al repo una vez finalizado el build y veamoslo
 
 ### Y por ultimo, agregar el badge
 Dale clic sobre
-![](../Images/elBadge.png)
+![](../Images/elBadge.png).
 Luego selecciona la opción Markdown y eso es lo que tenes que pegar a tu README
+
 ![](../Images/agregarBadge.png)
 
 
