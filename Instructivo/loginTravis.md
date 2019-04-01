@@ -38,23 +38,23 @@ Y listo! Tenemos nuestra cuenta Pro
 Parrafo aparte, te recomendamos [entrar a ver los beneficios de Github](https://education.github.com/pack/offers) donde vas a ver a todo lo que tenes acceso.
 
 ## Ahora si, vamos a Travis
-### Primero creamos la cuenta
+### 1)Primero creamos la cuenta
 Tenemos que [entrar a TravisCI](https://education.travis-ci.com/) y nos logueamos con la cuenta de GitHub
 
 ![](../Images/signWithGithub.png)
 
 Travis te va a pedir que le autorices instalarse en Github y listo.
 
-### Y ahora a trabajar!
+### 2)Integrando las Katas
 Vamos al [Dashboard](https://travis-ci.com/dashboard) y nos vamos a encontrar con todas las Katas que hicimos y vamos a poder buildearlos.
 
 ![](../Images/Build.png)
 
-### ¿Salió todo bien?
+### 3)¿Salió todo bien?
 Entremos al repo una vez finalizado el build y veamoslo
 ![](../Images/statusBuild.png)
 
-### Y por ultimo, agregar el badge
+### 4)Y por ultimo, agregar el badge
 Dale clic sobre
 ![](../Images/elBadge.png).
 Luego selecciona la opción Markdown y eso es lo que tenes que pegar a tu README
