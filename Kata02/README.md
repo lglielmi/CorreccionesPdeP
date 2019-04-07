@@ -13,10 +13,12 @@ edadDificil = (>=40).(+1).edad
 - Matias.l.anzorandia@gmail.com	matiasanz
 
 ## Solucion
+```Haskell
 nombreDificil :: Persona -> Bool
 nombreDificil  = (>15).length.nombre
 edadDificil :: Persona -> Bool
 edadDificil  =(>=40).(1+).edad
+```
 
 #Corrección (para ambos dado que son iguales)
 - **Nota: 2**
