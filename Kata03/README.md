@@ -1,4 +1,4 @@
-#Alumnos
+# Alumnos
 - RAMÍREZ MOREALE, NICOLÁS PAUL	nicolaspaulmoreale@outlook.com	nramrezmoreale
 - ENRIQUEZ, SYLVINA	sylvina64@gmail.com	sylvina64
 
@@ -67,6 +67,20 @@ jardineria tipo persona = Persona{
 Pero como aclaración va lo siguiente:
 - Expresividad: jardineriaAux no me dice mucho que es lo que va a hacer. Podría llamarse diversionDeJardineria, gradoDeJardineria o seguramente de varias formas más que me expresan mucho mejor que es lo que me retorna
 - Record Syntax: aclaramos nuevamente que podrían haber redefinido unicamente el gradoDeDiversion manteniendo el resto.
+- Sobre este punto se pedía "no repetir código". Si se fijan, videoJuegos y jardineria poseen practicamente la misma lógica: ambos a partir de un criterio aumentan en N los grados de diversión.
+```Haskell
+-- Podríamos separar esa parte de la logica en una función
+divertirse :: Int -> PasaTiempo 
+divertirse grado persona = persona{
+    gradoDeDiversion = grado + gradoDeDiversion persona
+}
+-- Y que las dos funciones que teníamos que implementar la utilicen.
+videoJuegos :: Int -> PasaTiempo
+videoJuegos nivel persona = divertirse calcularGradoVideoJuego(nivel) persona
+
+jardineria :: String -> PasaTiempo
+jardineria tipo persona = divertirse calcularGradoJardineria(tipo) persona
+```
 
 **Funcion 4: Todo OK**
 ```Haskell
@@ -107,3 +121,81 @@ En este caso, a diferencia de los anteriores, el agregarSir es bien expresivo, a
  Esten más atentos a indicar el tipo de las funciones auxiliares que implementen. En ninguno de los casos se agregó.
  Por otro lado, se olvidaron de ingresar el badge. Para la proxima intenten recordarlo.
 
+# ALUMNOS
+- AGUILA VISITACION, JESSICA MILAGROS	jessica.3091@gmail.com	jessica3091
+- ARZA, CHRISTIAN MARIANO	marianoarza@gmail.com	marianoarza 
+
+**NOTA: 3**
+**Función 01: Todo OK**
+
+**Función 02: Todo OK**
+Muy bien delegando a la función obtenerGradoDiversionJuego.
+```Haskell
+obtenerGradoDiversionJuego :: Int -> Int
+obtenerGradoDiversionJuego nivel | ((>=8) . (div nivel)) 2 = 8
+                            | otherwise = div nivel 2
+
+-- ============================================================================================
+
+videoJuegos :: Int -> PasaTiempo
+videoJuegos nivel persona  = persona {
+                             gradoDeDiversion = gradoDeDiversion persona + obtenerGradoDiversionJuego nivel
+}
+```
+Solo una aclaración: se podrían haber ahorrado la función con guardas utilizando la función min, que recibe dos números y devuelve el más bajo.
+```Haskell
+obtenerGradoDiversionJuego :: Int -> Int
+obtenerGradoDiversionJuego nivel = min 8 (div nivel 2)
+```
+
+**Funcion 03: Todo OK** 
+Nuevamente, muy bien separando las responsabilidades.
+```Haskell
+obtenerGradoDiversionJardineria :: String -> Int
+obtenerGradoDiversionJardineria tipoJardineria | tipoJardineria == "ornamental" = 10
+                                               | tipoJardineria == "bonsai" = 20
+                                               | otherwise = length tipoJardineria
+
+jardineria :: String -> PasaTiempo
+jardineria tipo persona = persona {
+                          gradoDeDiversion = gradoDeDiversion persona + obtenerGradoDiversionJardineria tipo
+}
+```
+Sobre este punto se pedía "no repetir código". Si se fijan, videoJuegos y jardineria poseen practicamente la misma lógica: ambos a partir de un criterio aumentan en N los grados de diversión.
+```Haskell
+-- Podríamos separar esa parte de la logica en una función
+divertirse :: Int -> PasaTiempo 
+divertirse grado persona = persona{
+    gradoDeDiversion = grado + gradoDeDiversion persona
+}
+-- Y que las dos funciones que teníamos que implementar la utilicen.
+videoJuegos :: Int -> PasaTiempo
+videoJuegos nivel persona = divertirse calcularGradoVideoJuego(nivel) persona
+
+jardineria :: String -> PasaTiempo
+jardineria tipo persona = divertirse calcularGradoJardineria(tipo) persona
+```
+**Función 04: Todo OK**
+Nada que agregar, está perfecto. Bien delegando, componiendo y notando que no hacia falta poner a persona en la implementación.
+```Haskell
+obtenerAnioNacimiento (_,_,anio) = anio
+
+esCentennial :: Persona -> Bool
+esCentennial = (>=1995) . obtenerAnioNacimiento . fechaDeNacimiento
+```
+**Función 05: Todo OK**
+Todo perfecto. 
+```Haskell
+controlarSir nombre | take 3 nombre == "Sir" = nombre
+                    | otherwise  = "Sir" ++ " " ++ nombre
+
+golf :: PasaTiempo
+golf persona = persona {
+               nombre = controlarSir (nombre persona)               
+}
+```
+Como aclaraciones muy chiquitas:
+ - Habría estado bueno separar el take 3 nombre == "Sir" en una función aparte "yaEsSir" o "empiezaConSir". 
+ - en el otherwise, podrían haber puesto "Sir " en lugar del "Sir" ++ " ".
+
+Felicitaciones chicos, buen trabajo!
