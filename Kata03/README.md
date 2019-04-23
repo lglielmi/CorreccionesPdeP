@@ -2,6 +2,8 @@
 - RAMÍREZ MOREALE, NICOLÁS PAUL	nicolaspaulmoreale@outlook.com	nramrezmoreale
 - ENRIQUEZ, SYLVINA	sylvina64@gmail.com	sylvina64
 
+**NOTA: 2**
+
 Lamentablemente vemos que la solución no corrió bien por Travis.
 [![Build Status](https://travis-ci.com/pdep-utn/kata-3-funcional-2019-modelado-hobbies-sylvina64.svg?token=r9NmZKuvxPp5obinxbZw&branch=master)](https://travis-ci.com/pdep-utn/kata-3-funcional-2019-modelado-hobbies-sylvina64)
 
@@ -18,8 +20,10 @@ Al compilar da el siguiente error, correspondiente a la función 2.
    |                
 ```
 Vamos por partes:
-- Funcion 01: Todo OK
-- Función 01: Bueno, para empezar tenemos el problema de que no compila por el error mencionado antes:
+**Funcion 01: Todo OK**
+
+**Función 02: No compila :(**
+Bueno, para empezar tenemos el problema de que no compila por el error mencionado antes:
 ```Haskell
 videoJuegos :: Int -> PasaTiempo
 videoJuegosAux nivel persona = ((+ (calcularGrado nivel)).gradoDeDiversion) persona
@@ -45,7 +49,7 @@ videoJuegos nivel persona = persona {
 ```
 Además, en lugar de pasar cada uno de los componentes de persona nuevamente, solo pasó al que quiere modificar (utilizando el pattern matching del record syntax **Javi: Validame si se llama así**)
 
-- Función 3: Todo OK
+**Función 3: Todo OK**
 ```Haskell
 jardineria :: String -> PasaTiempo
 
@@ -64,7 +68,7 @@ Pero como aclaración va lo siguiente:
 - Expresividad: jardineriaAux no me dice mucho que es lo que va a hacer. Podría llamarse diversionDeJardineria, gradoDeJardineria o seguramente de varias formas más que me expresan mucho mejor que es lo que me retorna
 - Record Syntax: aclaramos nuevamente que podrían haber redefinido unicamente el gradoDeDiversion manteniendo el resto.
 
-- Funcion 4: Todo OK
+**Funcion 4: Todo OK**
 ```Haskell
 esCentennial :: Persona -> Bool
 esCentennial persona = (esMayorA1995.anioNacimiento.fechaDeNacimiento) persona
@@ -80,7 +84,7 @@ esCentennial = esMayorA1995.anioNacimiento.fechaDeNacimiento
 ```
 Pero no es más que un detalle.
 
-- Funció 5: Todo OK
+**Funció 5: Todo OK**
 ```Haskell
 golf :: PasaTiempo
 golf persona = agregarSir persona
@@ -102,3 +106,4 @@ En este caso, a diferencia de los anteriores, el agregarSir es bien expresivo, a
  - Aclaraciones finales:
  Esten más atentos a indicar el tipo de las funciones auxiliares que implementen. En ninguno de los casos se agregó.
  Por otro lado, se olvidaron de ingresar el badge. Para la proxima intenten recordarlo.
+
