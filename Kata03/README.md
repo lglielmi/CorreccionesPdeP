@@ -63,17 +63,42 @@ jardineria tipo persona = Persona{
 Pero como aclaración va lo siguiente:
 - Expresividad: jardineriaAux no me dice mucho que es lo que va a hacer. Podría llamarse diversionDeJardineria, gradoDeJardineria o seguramente de varias formas más que me expresan mucho mejor que es lo que me retorna
 - Record Syntax: aclaramos nuevamente que podrían haber redefinido unicamente el gradoDeDiversion manteniendo el resto.
-- Repetición de código: No se si lo habrán notado pero lo que hicimos en la función de videoJuegos y Jardineria hace practicamente lo mismo: le suma un Algo a gradoDeDiversion
+
+- Funcion 4: Todo OK
 ```Haskell
-divertirse :: Int -> PasaTiempo 
-divertirse grado persona = persona{
-    gradoDeDiversion = grado + gradoDeDiversion persona
+esCentennial :: Persona -> Bool
+esCentennial persona = (esMayorA1995.anioNacimiento.fechaDeNacimiento) persona
+
+anioNacimiento (_,_,anio) = anio
+
+esMayorA1995 = (>1995)
+```
+Solo una aclaración: en este caso, se podría haber implementado la función sin ingresar a persona:
+```Haskell
+esCentennial :: Persona -> Bool
+esCentennial = esMayorA1995.anioNacimiento.fechaDeNacimiento
+```
+Pero no es más que un detalle.
+
+- Funció 5: Todo OK
+```Haskell
+golf :: PasaTiempo
+golf persona = agregarSir persona
+
+agregarSir persona | empiezaConSir persona = persona
+                   | otherwise = sumarSir persona
+
+sumarSir persona = Persona{
+nombre = (("Sir " ++).nombre) persona,
+fechaDeNacimiento = fechaDeNacimiento persona,
+gradoDeDiversion = gradoDeDiversion persona,
+hobbies = hobbies persona
 }
 
-videoJuegos :: Int -> PasaTiempo
-videoJuegos nivel persona = divertirse calcularGradoVideoJuego(nivel) persona
-
-jardineria :: String -> PasaTiempo
-jardineria tipo persona = divertirse calcularGradoJardineria(tipo) persona
+empiezaConSir persona = ((=="Sir ").(take 4).nombre) persona
 ```
+En este caso, a diferencia de los anteriores, el agregarSir es bien expresivo, al igual que el empiezaConSir. Así, el código queda totalmente calro. Sin embargo, acá devuelta tenemos que recordarle lo del record syntax.
 
+ - Aclaraciones finales:
+ Esten más atentos a indicar el tipo de las funciones auxiliares que implementen. En ninguno de los casos se agregó.
+ Por otro lado, se olvidaron de ingresar el badge. Para la proxima intenten recordarlo.
