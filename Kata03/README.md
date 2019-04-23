@@ -1,6 +1,6 @@
 # Alumnos
-- RAMÍREZ MOREALE, NICOLÁS PAUL	nicolaspaulmoreale@outlook.com	nramrezmoreale
-- ENRIQUEZ, SYLVINA	sylvina64@gmail.com	sylvina64
+- RAMÍREZ MOREALE, NICOLÁS PAUL	nicolaspaulmoreale@outlook.com	@nramrezmoreale
+- ENRIQUEZ, SYLVINA	sylvina64@gmail.com	@sylvina64
 
 **NOTA: 2**
 
@@ -37,9 +37,9 @@ videoJuegos nivel persona = Persona{
                                   hobbies = hobbies persona
                                   }
 ```
-Por un lado no se llega a comprender cual fue la intención de videoJuegosAux (expresividad cof cof). 
+Por un lado no se llega a comprender fácilmente cuál fue la intención de videoJuegosAux - esto es por falta de **expresividad**. 
 Entiendo que intentaron calcular cuanto tiene que subir el Grado de Diversión, y despues sumarlo. 
-De hecho, con calcularGrado lo lograban sin problemas (sidenote: vimos que Nicolas lo continuó por su cuenta y también se percato de ello, así que podemos mostrar directamente su solución, aunque esto no va a valer para la kata porque salió despues de hora):
+De hecho, con calcularGrado lo lograban sin problemas (nota: vimos que Nicolas lo continuó por su cuenta y también se percato de ello, así que podemos mostrar directamente su solución, aunque esto no va a valer para la kata porque salió despues de hora):
 
 ```Haskell
 videoJuegos :: Int -> PasaTiempo
@@ -47,7 +47,7 @@ videoJuegos nivel persona = persona {
     gradoDeDiversion = ((+ (calcularGrado nivel)).gradoDeDiversion) persona
 }
 ```
-Además, en lugar de pasar cada uno de los componentes de persona nuevamente, solo pasó al que quiere modificar (utilizando el pattern matching del record syntax **Javi: Validame si se llama así**)
+Además, en lugar de pasar cada uno de los componentes de persona nuevamente, solo pasó al que quiere modificar (utilizando el pattern matching del record syntax).
 
 **Función 3: Todo OK**
 ```Haskell
@@ -67,6 +67,12 @@ jardineria tipo persona = Persona{
 Pero como aclaración va lo siguiente:
 - Expresividad: jardineriaAux no me dice mucho que es lo que va a hacer. Podría llamarse diversionDeJardineria, gradoDeJardineria o seguramente de varias formas más que me expresan mucho mejor que es lo que me retorna
 - Record Syntax: aclaramos nuevamente que podrían haber redefinido unicamente el gradoDeDiversion manteniendo el resto.
+```Haskell
+jardineria tipo persona = Persona{
+                                  gradoDeDiversion =  ((+ (jardineriaAux tipo)).gradoDeDiversion) persona,
+                                  }
+
+```
 - Sobre este punto se pedía "no repetir código". Si se fijan, videoJuegos y jardineria poseen practicamente la misma lógica: ambos a partir de un criterio aumentan en N los grados de diversión.
 ```Haskell
 -- Podríamos separar esa parte de la logica en una función
@@ -91,7 +97,7 @@ anioNacimiento (_,_,anio) = anio
 
 esMayorA1995 = (>1995)
 ```
-Solo una aclaración: en este caso, se podría haber implementado la función sin ingresar a persona:
+Solo una aclaración: en este caso, se podría haber implementado la función con Point-Free sin ingresar a persona:
 ```Haskell
 esCentennial :: Persona -> Bool
 esCentennial = esMayorA1995.anioNacimiento.fechaDeNacimiento
@@ -115,12 +121,11 @@ hobbies = hobbies persona
 
 empiezaConSir persona = ((=="Sir ").(take 4).nombre) persona
 ```
-En este caso, a diferencia de los anteriores, el agregarSir es bien expresivo, al igual que el empiezaConSir. Así, el código queda totalmente calro. Sin embargo, acá devuelta tenemos que recordarle lo del record syntax.
+En este caso, a diferencia de los anteriores, el agregarSir es bien expresivo, al igual que el empiezaConSir. Así, el código queda totalmente claro. Sin embargo, acá devuelta tenemos que recordarle lo del record syntax.
 
  - Aclaraciones finales:
  Esten más atentos a indicar el tipo de las funciones auxiliares que implementen. En ninguno de los casos se agregó.
- Por otro lado, se olvidaron de ingresar el badge. Para la proxima intenten recordarlo.
-
+ Por otro lado, se olvidaron de ingresar el badge. Para la proxima recuerden agregarlo al README, porque es condición necesaria para tomar la kata como aprobada.
 # ALUMNOS
 - AGUILA VISITACION, JESSICA MILAGROS	jessica.3091@gmail.com	jessica3091
 - ARZA, CHRISTIAN MARIANO	marianoarza@gmail.com	marianoarza 
