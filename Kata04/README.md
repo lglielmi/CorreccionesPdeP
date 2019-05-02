@@ -100,7 +100,7 @@ Más allá de estos detalles, la recursividad esta usada diez puntos así que es
 
 https://github.com/pdep-utn/fun-kata-04-destinos-Andrefer25
 
-**NOTA:**
+**NOTA:1.5
 
 Antes que nada, quería comentar sobre decisión de mezclar idiomas en la misma base de código. Es algo super menor en este caso, pero en los trabajos de programación una buena idea en general es mantener las prácticas de estilo del código existente (en este caso, el código hecho en Paradigmas lo escribimos en castellano). Además, si pueden tomar la decisión ustedes y el código no va a ser usado por personas que hablen otros idiomas, siempre les recomiendo escribir su propio código o al menos su código de negocio en su lengua nativa por lo que les comento más abajo.
 
