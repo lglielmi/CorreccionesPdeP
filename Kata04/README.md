@@ -132,3 +132,34 @@ esMayorPorUno primerPunto segundoPunto = ((+1).stars) primerPunto == stars segun
 
 sortByStars (primerPunto:segundoPunto:otrosPuntos) = esMayorPorUno primerPunto segundoPunto && sortByStars (segundoPunto:otrosPuntos)
 ```
+---
+# ALUMNOS
+- CRESPO, HERNÁN	h.crespo06@gmail.com	hcrespo06
+- CASTRO, EMILIANO MATIAS	emilianocast98@gmail.com	ecastro98
+
+https://github.com/pdep-utn/fun-kata-04-destinos-ecastro98
+
+**Nota: 2**
+
+**Función esBarato: Todo OK**
+
+**Función tieneAlMenosTresPuntos: Todo OK**
+
+**Función esOrdenado:**
+
+La recursividad está perfecta. 
+```Haskell
+esOrdenado :: [PuntoDeInteres] -> Bool
+esOrdenado [] = True 
+esOrdenado (_:[]) = True
+esOrdenado (x:y:xs) = ((estrellas x)+1 == estrellas y) && esOrdenado (y:xs)
+```
+Solo dos comentarios (calando muy ondo dado que toda la kata está muy bien resuelta)
+- El pattern matching (x:y:ys) no resulta muy expresivo. Se puede utilizar (punto1 : punto2 : otrosPuntos), es decir, le pueden dar el nombre que les parezca más adecuado.
+- La responsabilidad de chequear que dos puntos de interes esten ordenados y su diferencia sea de uno, es una responsabilidad lo suficientemente puntual como para extraer a su propia función
+Se podría haber implementado la siguiente función:
+```Haskell
+esMayorPorUno punto1 punto2 = ((+1).estrellas) punto1 == estrellas punto2
+esOrdenado (punto1:punto2:otrosPuntos) = esMayorPorUno punto1 punto2 && sortByStars (segundoPunto:otrosPuntos)
+```
+**Función bienDefinido: Todo OK**
