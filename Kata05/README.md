@@ -10,10 +10,16 @@ esPalabraReservada OK (Aunque podrían haber usado point free)
 
 esCaracterValido OK. 
 
-calcularImpuestoGanancias OK. Perfecta la resolución pero queremos mencionarles que lo ideal no será usar a sum y map juntos.
+calcularImpuestoGanancias OK. Más allá de un (+) matemáticamente superfluo en `calculoImpuesto` que podría eliminarse dejando la función así:
+```Haskell
+calculoImpuesto sueldo | sueldo < 1000 = 0
+                       | otherwise = ((*0.3) . (-1000)) sueldo
+```
 
-¿Porque? Piensen que están tomando una lista, para transformarla en otra lista y despues reducirla a un valor. 
-Es decir, estamos recorriendo dos veces una lista, cuando podríamos haberlo hecho una sola. 
+ la resolución esta muy bien pero queremos mencionarles que lo ideal no será usar a sum y map juntos.
+
+¿Por qué? Piensen que están tomando una lista, para transformarla en otra lista y despues reducirla a un valor. 
+Es decir que estamos recorriendo dos veces una lista, cuando podríamos haberlo hecho una sola. 
 
 ¿Cómo?
 En la ultima clase vimos el fold, que nos viene perfecto para resolver este punto. Una manera sería:
