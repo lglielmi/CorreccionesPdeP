@@ -71,4 +71,40 @@ ALBOR, LUCAS EMANUEL	lucas.007.albor.e@gmail.com	Emanuelalbor		X
 
 CALVO ROMERO, CRISTOPHER JOHN	ccalvoromero@gmail.com	ccalvoromero
 
-*Pendiente*
+**Nota: 1.5**
+
+palabrasReservadas OK
+
+esPalabraReservada & esCaracterValido: acá hubo una pequeña mezcla que hizo que en su conjunto funcione bien para lo que era el ejercicio
+pero ninguna de las dos realiza lo que dice realizar. Vamos de a una:
+```Haskell
+esCaracterValido:: Caracter -> Bool
+esCaracterValido caracter = elem caracter especiales
+```
+Al hacer esto, nos devolverá true cuando el caracter pertenezca a la lista especiales, y false cuando no. Es decir que para este caso nos va a estar devolviendo true para #$%&/()!_*, que son justamente los caracteres invalidos.
+Entonces la función implementada es más bien un esCaracterEspecial.
+
+Una manera correcta de implementarla habría sido
+```Haskell
+esCaracterValido:: Caracter -> Bool
+esCaracterValido caracter = (not.elem caracter) especiales
+```
+O si quiero usar point free
+```Haskell
+esCaracterValido:: Caracter -> Bool
+esCaracterValido = not.flip elem especiales
+```
+Luego, una palabra es reservada cuando todos sus caracteres son válidos.
+```Haskell
+esPalabraReservada:: Palabra -> Bool
+esPalabraReservada  = not.(any esCaracterValido)
+```
+Sin embargo lo que acá hicieron es equivalente a "una palabra es reservada si no tiene algún caracter valido". Y como justo su implementación de esCaracterValido era más bien un esCaracterEspecial, nos termino quedando algo equivalente a "una palabra es reservada si no tiene algún caracter especial", lo cual es cierto, pero no es lo que expresa la función en cuanto a su declaratividad.
+Tomando en cuenta la implementación de esCaracterValido que nosotros les indicamos, una implementación posible será:
+```Haskell
+esPalabraReservada:: Palabra -> Bool
+esPalabraReservada  = all esCaracterValido
+```
+
+
+
