@@ -48,7 +48,7 @@ esCaracterValido OK (y muy bien asimilando rapido el uso del flip!)
 calcularImpuestoGanancias OK. El objetivo de la kata era usar lo más posible el orden superior y lo usaron muy bien.
 Ahora bien, yendo a la practica, no va a ser muy lindo encontrarse con un sum, map y filter en la misma función.
 
-¿Porque? Piensen que están tomando una lista, para transformarla en una otra lista (más chica), para transformarla en otra lista (de otro tipo) 
+¿Por qué? Piensen que están tomando una lista, para transformarla en una otra lista (más chica), para transformarla en otra lista (de otro tipo) 
 y despues reducirla a un valor. Es decir, estamos recorriendo tres veces una lista, cuando podríamos haberlo hecho recorriendola solo una vez.
 
 ¿Cómo?
