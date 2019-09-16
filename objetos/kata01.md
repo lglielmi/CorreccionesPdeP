@@ -3,6 +3,8 @@
 TAMBORINI AGUSTÍN	TamboriniAgustin Te lo codeo como bokita papá (2052)
 LANNERT, NICOLÁS	nicolasLannert	Te lo codeo como bokita papá(2152)
 
+**NOTA: 1**
+
 - **No compila la solución.** 
 
 Actualmente en travis se puede chequear que no se están ejecutando los test (y de hecho, el badge está en failing)
@@ -79,6 +81,8 @@ Esto puede hacer al código más declarativo, además de que le sacamos a codear
 # BTF 
 BUCCI, PABLO 		PabloBucci	BTF (2152)
 CONTESTABILE, ALEJO 	AlejoCont  BTF (2152)
+
+**NOTA: 2**
 
 La solución no pasa por todos los tests.
 
